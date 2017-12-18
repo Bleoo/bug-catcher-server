@@ -2,8 +2,9 @@
 
 const dbHelper = require('../../app/helper/dbHelper');
 
-function Bug(id, info) {
+function Bug(id, device, info) {
     this.id = id;
+    this.device = device;
     this.info = info;
 }
 
@@ -15,10 +16,7 @@ Bug.add = function (bug) {
             }
             const collection = db.collection('bug');
             collection.insertOne(
-                {
-                    id: bug.id,
-                    info: bug.info
-                },
+                bug,
                 function (err) {
                     if (err) {
                         reject(err);

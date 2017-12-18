@@ -14,6 +14,7 @@ router.get('/', async function (ctx, next) {
 router.post('/', async function (ctx, next) {
     var new_bug = new Bug(
         ctx.request.body.id,
+        ctx.request.body.device,
         ctx.request.body.info
     );
     var ok = await Bug.add(new_bug);
