@@ -7,6 +7,7 @@ const bodyparser = require('koa-bodyparser');
 const logger = require('koa-logger');
 
 const api = require('./routes/api');
+const APP_PATH = __dirname;
 
 // error handler
 onerror(app);
